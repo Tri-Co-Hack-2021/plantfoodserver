@@ -3,8 +3,8 @@ let express = require('express');
 let app = express();
 const db = require("./db");
 
-let user = require('./controllers/usercontroller');
-let recipe = require('./controllers/recipecontroller');
+let user = require('./controllers/userController');
+let recipe = require('./controllers/recipeController');
 
 app.use(require('./middleware/headers'));
 app.use(express.json());
