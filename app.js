@@ -4,15 +4,15 @@ let app = express();
 const db = require("./db");
 
 let user = require('./controllers/usercontroller');
+let recipe = require('./controllers/recipecontroller');
 
 app.use(require('./middleware/headers'));
 app.use(express.json());
 
-const validateSession = require('./middleware/validateSession')
 
 
 app.use ('/user',user);
-
+app.use('/recipe', recipe)
 
 db.authenticate()
   .then(() => db.sync())  // => (force: true)

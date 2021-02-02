@@ -14,12 +14,12 @@ sequelize.authenticate().then(
   }
 );
 
-// User = sequelize.import('./models/user');
-// Recipe = sequelize.import('./models/recipe');
+User = sequelize.import('./models/user');
+Recipe = sequelize.import('./models/recipe');
 
 
-// User.hasMany(Recipe);
-// Recipe.belongsTo(User);
+User.hasMany(Recipe);
+Recipe.belongsTo(User);
 
 
 module.exports = sequelize;
