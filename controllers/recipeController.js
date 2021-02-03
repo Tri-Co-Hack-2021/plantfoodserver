@@ -22,7 +22,9 @@ router.post('/', validateSession, function(req, res){
 })
 
 router.get('/all', (req, res) => {
-  Recipe.findAll()
+  Recipe.findAll({
+    include: 'user'
+  })
   .then(data => res.status(200).json(data))
   .catch(err => res.status(500).json({ error: err }))
 })
