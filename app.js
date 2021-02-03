@@ -15,7 +15,7 @@ app.use ('/user',user);
 app.use('/recipe', recipe)
 
 db.authenticate()
-  .then(() => db.sync({force: true}))  // => (force: true)
+  .then(() => db.sync())  // => (force: true)
   .then(() => {
     app.listen(process.env.PORT, () => console.log(`[Server: ] App is listening on Port ${process.env.PORT}`));  
   })
